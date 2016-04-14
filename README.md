@@ -1,3 +1,12 @@
+This is the fork of official image for postgres.
+The difference is an optional auto memory configuration feature:
+Define environment variable for the container *PG_AUTO_MEMORY_CONFIG=yes* and if
+there is a memory limit for the container, then will be created additional
+configuration file $PGDATA/auto_memory_config.conf.
+It defines *max_connections*, *shared_buffers*. *effective_cache_size*
+parameters according to memory limit in the container.
+
+
 # About this Repo
 
 This is the Git repo of the Docker [official image](https://docs.docker.com/docker-hub/official_repos/) for [postgres](https://registry.hub.docker.com/_/postgres/). See [the Docker Hub page](https://registry.hub.docker.com/_/postgres/) for the full readme on how to use this Docker image and for information regarding contributing and issues.

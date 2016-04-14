@@ -93,6 +93,11 @@ if [ "$1" = 'postgres' ]; then
 		echo
 	fi
 
+    if [ ! -z "$PG_AUTO_MEMORY_CONFIG" ]; then
+        . /pg_auto_memory_config.sh "$PGDATA"
+    fi
+
+
 	exec gosu postgres "$@"
 fi
 

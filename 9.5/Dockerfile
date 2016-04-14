@@ -52,6 +52,7 @@ ENV PGDATA /var/lib/postgresql/data
 VOLUME /var/lib/postgresql/data
 
 COPY docker-entrypoint.sh /
+COPY pg_auto_memory_config.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
